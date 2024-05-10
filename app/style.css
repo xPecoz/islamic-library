@@ -1,0 +1,509 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #f1f5f9;
+  --main-color: #00d084;
+  --btn-color: #008655;
+  --sidebar-color: #02b473;
+  --gray-color: #f7f7f7;
+}
+::selection {
+  color: #000;
+  background-color: var(--main-color);
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--sidebar-color);
+  box-shadow: 0 0 30px 30px var(--sidebar-color);
+}
+body {
+  font-family: "Tajawal", sans-serif;
+}
+/******** Start Sidebar ********/
+aside {
+  width: 270px;
+  height: calc(100vh - 110px);
+  &.aside-show {
+    transform: translateX(102%);
+  }
+  ul li a::before {
+    width: 5px;
+  }
+}
+/******** End Sidebar ********/
+/******** Start Boxes ********/
+.main-h2::before {
+  height: 3px;
+  animation: scale 3s infinite;
+}
+@keyframes scale {
+  0% {
+    width: 35%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 35%;
+  }
+}
+/******** End Boxes ********/
+/******** Start Left ********/
+.border-1 {
+  border-width: 1px;
+}
+.time-pray {
+  &:last-child {
+    border-left: none;
+  }
+  &:not(:first-child) {
+    padding: 0 10px 0 10px;
+  }
+}
+.btm-fire .main-btn {
+  width: 100%;
+}
+.show {
+  width: 100px;
+}
+
+.listen .main-btn {
+  margin: 0;
+  padding-left: 21px;
+  padding-right: 21px;
+}
+/******** End Left ********/
+/******** Start Quran Page ********/
+.quran-table {
+  min-width: 1000px;
+}
+.left-quran {
+  width: 800px;
+}
+hr {
+  border: 1px solid var(--main-color);
+}
+/******** End Quran Page ********/
+/******** Start Read Page ********/
+.center-hadis {
+  background-color: white;
+  border-radius: 6px;
+  padding: 20px;
+  overflow-y: scroll;
+  width: -webkit-fill-available;
+}
+.left-listen .main-btn {
+  margin: 0;
+  width: 120px;
+}
+.topic * {
+  font-family: "KFGQPC HAFS Uthmanic Script";
+}
+.page-num {
+  background-image: url(../public/star.png);
+  font-weight: bold !important;
+}
+.part {
+  font-size: 20px;
+  font-weight: bold;
+}
+.choose-sura {
+  border-bottom: 1px solid var(--main-color);
+}
+.sura {
+  font-family: "KFGQPC HAFS Uthmanic Script";
+  div {
+    background: url(../public/Aya-End.png);
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    display: inline-grid;
+    place-content: center;
+    margin-left: 5px;
+  }
+  > p:first-child {
+    font-family: inherit;
+  }
+  span {
+    font-family: inherit;
+  }
+}
+/******** End Read Page ********/
+/******** Start Login Page ********/
+.right-login {
+  width: 70%;
+  position: relative;
+  background-color: white;
+}
+.content-login {
+  padding: 0;
+}
+.top-login h2 {
+  display: flex;
+  margin: 15px auto 0;
+  font-size: 30px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  gap: 20px;
+  margin: 20px auto 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.login-form input {
+  border: none;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 15px;
+  /* color: white; */
+  border-radius: 4px;
+  background-color: var(--bg-color);
+}
+.login-form input::placeholder {
+  color: #222;
+}
+form button {
+  border: none;
+  cursor: pointer;
+}
+.forget-pass {
+  text-align: center;
+  color: #222;
+  font-weight: bold;
+}
+/******** End Login Page ********/
+/******** Start Books Page ********/
+.center-books,
+.center-azkar {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.center-khatab {
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+}
+.center-khatab-boxs {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+@media (width <= 500px) {
+  .center-khatab-boxs {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+.center-books .box .main-btn {
+  width: 90px;
+}
+/******** End Books Page ********/
+/******** Start Azkar Page ********/
+.center-azkar .box {
+  .main-btn {
+    width: 90px;
+  }
+  &::before {
+    border-radius: 50%;
+  }
+  &:hover {
+    &::before {
+      border-radius: 0;
+    }
+    p,
+    h2 {
+      color: white;
+    }
+  }
+}
+.btm-zkr .zkrs {
+  font-size: 21px;
+}
+/******** End Azkar Page ********/
+.main-btn2 {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: #6bc55b;
+  --btn-bg-2: #15b386;
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  background-image: linear-gradient(92deg, var(--btn-bg-2), var(--btn-bg-1));
+}
+.main-btn2:hover {
+  background-position: right top;
+}
+.main-btn {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: var(--btn-color);
+  --btn-bg-2: var(--sidebar-color);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  background-size: 280% auto;
+  background-image: linear-gradient(
+    325deg,
+    var(--btn-bg-2) 0%,
+    var(--btn-bg-1) 55%,
+    var(--btn-bg-2) 90%
+  );
+}
+.main-btn:hover {
+  background-position: right top;
+}
+.main-btn:is(:focus, :focus-within, :active) {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-donate {
+    transition: linear;
+  }
+}
+/******** Start hadis Page ********/
+.hadis:not(:first-child) {
+  margin-top: 25px;
+}
+/******** End hadis Page ********/
+/******** Start pray Page ********/
+.copy-btn {
+  background-color: #13a95f;
+}
+/******** End pray Page ********/
+/******** Start Listen Quran Page ********/
+.quran-table {
+  outline: 2px solid #e5e5e5;
+  tbody tr {
+    border-bottom: 2px solid #e5e5e5;
+    &:last-of-type {
+      border: none;
+    }
+    &:hover {
+      background-color: #eee;
+    }
+  }
+  td:not(:last-child) {
+    border-left: 2px solid #e5e5e5;
+  }
+  .main-btn {
+    width: fit-content;
+  }
+}
+.lis {
+  a,
+  button {
+    margin: 0;
+  }
+}
+/******** End Listen Quran Page ********/
+.showSurah {
+  span {
+    transition: transform 0.3s;
+    transform: scaleY(0) translateX(-50%);
+  }
+  &:hover span {
+    transform: scaleY(1) translateX(-50%);
+  }
+}
+/******** Start Responsive ********/
+@media (width <= 1244px) {
+  .center-pray {
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 0;
+  }
+  .time-pray {
+    border: 0;
+    border-bottom: 1px solid var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-right: 0.75rem !important;
+    > * {
+      margin-bottom: 14px;
+    }
+    &::before {
+      content: ":";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 5px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}
+@media (width <= 890px) {
+  .content {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  aside {
+    width: calc(100% - 3rem);
+    &.aside-show {
+      transform: translateX(101%);
+    }
+  }
+}
+@media (width <= 444px) {
+  .left-listen .main-btn {
+    width: 90px;
+  }
+  .center-listen .topic h2 {
+    font-size: 26px !important;
+  }
+}
+/******** End Responsive ********/
+/******** Start 404 Error ********/
+.imgError {
+  width: 600px;
+  animation: move 3s infinite;
+}
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/******** End 404 Error ********/
+.center-mobile {
+  height: 100vh;
+  flex-direction: row;
+}
+input[type="range"] {
+  appearance: slider-vertical;
+  width: 16px;
+  height: 100px;
+}
+.accent-main {
+  opacity: 0;
+}
+.volume:hover .accent-main {
+  opacity: 100%;
+}
+iframe {
+  width: 811px;
+  height: 460px;
+}
+@media (width <= 895px) {
+  iframe {
+    width: 640px;
+    height: 350px;
+  }
+}
+@media (width <= 720px) {
+  iframe {
+    width: 480px;
+    height: 270px;
+  }
+}
+@media (width <= 559px) {
+  iframe {
+    width: 100%;
+    max-height: 250px;
+  }
+}
+.shadow-box {
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+}
+.active {
+  background-color: var(--sidebar-color);
+  color: white;
+}
+.swiper-wrapper {
+  display: flex;
+}
+.swiper- {
+  button-prev:after,
+  button-next:after,
+  rtl {
+    color: var(--main-color);
+  }
+}
+.swiper {
+  min-width: 1710px;
+}
+/*=========================*/
+.info p {
+  font-size: 25px;
+  margin-top: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+.image img {
+  animation: up-down 3s infinite;
+}
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.social-icons {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 30px;
+  margin-top: 30px;
+}
+.social-icons a i {
+  padding: 6px 11px;
+  border-radius: 10px;
+  font-size: 30px;
+  color: #fff;
+  transition: 0.3s;
+}
+.social-icons a .facebook-icon {
+  background-color: #106bff;
+}
+.social-icons a .instagram-icon {
+  background-color: #5c46d9;
+}
+.social-icons a .youtube-icon {
+  background-color: #e12a2e;
+}
+.social-icons a i:hover {
+  border-radius: 50%;
+}
+.border-10 {
+  border-width: 10px;
+}
+@media (width <= 1200px) {
+  .islamicTime {
+    height: 100px;
+  }
+}
+@media (width <= 1000px) {
+  .islamicBoxs {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (width <= 528px) {
+  .timeBoxs {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: var(--main-color);
+}
+
+.support-img-box img {
+  margin: auto;
+}
+.bank-alahly {
+  background-color: #f1f5f9;
+}
+.vodafone-cash {
+  background-color: #ee1c25;
+}
